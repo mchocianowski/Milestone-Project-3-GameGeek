@@ -1,0 +1,14 @@
+body{
+    background-color: grey;
+}
+.database_text{
+    color: black;
+}
+.web_title{
+    color: green;
+    font-size: 40px;
+}
+.games_title{
+    color: black;
+    text-align: center;
+}
