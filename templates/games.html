@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class=games_title>Game Central</h2>
+<p class= database_text>
+    {% for game in games %}
+        {{ game.game_name }}<br>
+        {{ game.platform }}<br>
+        {{ game.age_restriction }}<br>
+        {{ game.single_or_multiplayer }}<br>
+        {{ game.extra_comments }}<br>
+</p>
+    {% endfor %}
+
+{% endblock %}
