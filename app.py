@@ -22,12 +22,31 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_games")
 def get_games():
-    games = mongo.db.games.find()
+    games = list(mongo.db.games.find())
     return render_template("games.html", games=games)
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    if request.method == "POST":
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash(
+                "Sorry this Username already exists please try using a different Username.")
+            return redirect(url_for("register"))
+
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(register)
+
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        flash("Thankyou for registering with GameGeek!")
+        return redirect(url_for("profiles", username=session["user"]))
     return render_template("register.html")
 
 
