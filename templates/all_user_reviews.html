@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class=games_title>All User posts</h2>
+<div class="row">
+    {% for game in games %}
+    <div class="col s12 m3">
+        <div class="card green center-align">
+            <div class="card-content white-text">
+                <span class="card-title">{{ game.game_name }}</span>
+                <strong>{{ game.age_restriction }}</strong>
+                <strong>{{ game.genre_name }}</strong>
+                <strong>{{ game.single_or_multiplayer }}</strong>
+                <p>{{ game.extra_comments }}</p>
+                <p><em>by: {{ game.created_by }}</em></p>
+                <p></p>
+            </div>
+            <div class="card-action">
+                <a href="{{ url_for('delete_user_review', game_id=game._id)}}" class="btn red lighten-1">Delete</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
