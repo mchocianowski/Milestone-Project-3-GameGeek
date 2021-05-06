@@ -146,6 +146,17 @@ def delete_review(game_id):
     flash("Your post has been removed.")
     return redirect(url_for("my_posts"))
 
+@app.route("/all_user_reviews", methods=["GET", "POST"])
+def all_user_reviews():
+    games = list(mongo.db.games.find())
+    return render_template("all_user_reviews.html", games=games)
+
+@app.route("/delete_user_review/<game_id>")
+def delete_user_review(game_id):
+    mongo.db.games.remove({"_id": ObjectId(game_id)})
+    flash("This review has been removed.")
+    return redirect(url_for("all_user_reviews"))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
