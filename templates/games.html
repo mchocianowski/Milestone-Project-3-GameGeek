@@ -2,14 +2,24 @@
 {% block content %}
 
 <h2 class=games_title>Game Central</h2>
-<p class= database_text>
+
+<ul class="collapsible popout">
     {% for game in games %}
-        {{ game.game_name }}<br>
-        {{ game.platform }}<br>
-        {{ game.age_restriction }}<br>
-        {{ game.single_or_multiplayer }}<br>
-        {{ game.extra_comments }}<br>
-</p>
+    <li>
+      <div class="collapsible-header">
+          <i class="far fa-arrow-alt-circle-down"></i>
+          {{ game.game_name }}
+        </div>
+      <div class="collapsible-body">
+          <strong>{{ game.age_restriction }}</strong>
+          <strong>{{ game.genre_name }}</strong>
+          <strong>{{ game.single_or_multiplayer }}</strong>
+          <p>{{ game.extra_comments }}</p>
+          <p><em>by: {{ game.created_by }}</em></p>
+          <p></p>
+        </div>
+    </li>
     {% endfor %}
+  </ul>
 
 {% endblock %}
