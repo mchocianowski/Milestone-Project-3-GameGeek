@@ -89,6 +89,28 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/add_review", methods=["GET", "POST"])
+def add_review():
+    if request.method == "POST":
+        review = {
+            "game_name": request.form.get("game_name"),
+            "age_restriction": request.form.get("age_restriction"),
+            "genre_name": request.form.get("genre_name"),
+            "single_or_multiplayer": request.form.get("single_or_multiplayer"),
+            "extra_comments": request.form.get("extra_comments"),
+            "created_by": session["user"]
+        }
+        mongo.db.games.insert_one(review)
+        flash("Review Successfully Submitted")
+        return redirect(url_for("get_games"))
+
+    ages = mongo.db.ages.find().sort("age_restriction", 1)
+    genres = mongo.db.genres.find().sort("genre_name",1)
+    players = mongo.db.players.find().sort("single_or_multiplayer",1)
+    return render_template("add_review.html", genres=genres, ages=ages,
+                           players=players)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
