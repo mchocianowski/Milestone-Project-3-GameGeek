@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="green-text center-align">Edit Review</h3>
+
+<div class="row card=-panel white">
+    <form class="col s12" method="POST" action="{{url_for('edit_review',game_id=game._id)}}">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-trophy prefix green-text "></i>
+                <input id="game_name" name="game_name" value="{{ game.game_name }}"type="text" class="validate" required>
+                <label for="game_name">Game Title</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-users-slash prefix green-text"></i>
+                <select id="age_restriction" name="age_restriction" class="validate" required>
+                    <option value="" disabled>Age Restriction</option>
+                    {% for age in ages %}
+                        {% if age.age_restriction  == game.age_restriction %}
+                            <option value="{{ age.age_restriction }}" selected>{{ age.age_restriction }}</option>
+                        {% else %}
+                            <option value="{{ age.age_restriction }}">{{ age.age_restriction }}</option>
+                        {% endif %}
+                    {%endfor%}
+                </select>
+                <label for="age_restriction">Age Restriction</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-book prefix green-text"></i>
+                <select id="genre_name" name="genre_name" class="validate" required>
+                    <option value="" disabled>Select a Genre</option>
+                    {% for genre in genres %}
+                            {% if genre.genre_name  == game.genre_name %}
+                            <option value="{{ genre.genre_name }}" selected>{{ genre.genre_name }}</option>
+                        {% else %}
+                            <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+                <label for="Genre_Name">Genre</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-users prefix green-text"></i>
+                <select id="single_or_multiplayer" name="single_or_multiplayer" class="validate" required>
+                    <option value="" disabled selected>Single or Multiplayer</option>
+                    {% for player in players %}
+                        {% if player.single_or_multiplayer  == game.single_or_multiplayer %}
+                            <option value="{{ player.single_or_multiplayer }}" selected>{{ player.single_or_multiplayer }}</option>
+                        {% else %}
+                            <option value="{{ player.single_or_multiplayer }}">{{ player.single_or_multiplayer }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+                <label for="single_or_multiplayer">Single or Multiplayer</label>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-gamepad prefix green-text"></i>
+                <textarea id="extra_comments" name="extra_comments" minlength="5" maxlength="2000"
+                    class="materialize-textarea validate" required>
+                    {{-game.extra_comments -}}"
+                </textarea>
+                <label for="extra_comments">Game Description/review.</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 center-align">
+                <a href="{{ url_for('get_games') }}" class="btn waves-effect waves-light">
+                        Cancel <i class="fas fa-times-circle right"></i>
+                    </a>
+                <button class="btn waves-effect waves-light" type="submit">
+                    Edit Task <i class="fas fa-edit"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
