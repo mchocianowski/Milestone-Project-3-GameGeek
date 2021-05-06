@@ -117,6 +117,36 @@ def my_posts():
     return render_template("my_posts.html", games=games)
 
 
+@app.route("/edit_review/<game_id>", methods=["GET", "POST"])
+def edit_review(game_id):
+    if request.method == "POST":
+        submit_review = {
+            "game_name": request.form.get("game_name"),
+            "age_restriction": request.form.get("age_restriction"),
+            "genre_name": request.form.get("genre_name"),
+            "single_or_multiplayer": request.form.get("single_or_multiplayer"),
+            "extra_comments": request.form.get("extra_comments"),
+            "created_by": session["user"]
+        }
+        mongo.db.games.update({"_id": ObjectId(game_id)},submit_review)
+        flash("Review Successfully Updated")
+
+
+    game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
+    ages = mongo.db.ages.find().sort("age_restriction", 1)
+    genres = mongo.db.genres.find().sort("genre_name", 1)
+    players = mongo.db.players.find().sort("single_or_multiplayer", 1)
+    return render_template("edit_review.html", game=game, genres=genres,
+                           ages=ages, players=players)
+
+
+@app.route("/delete_review/<game_id>")
+def delete_review(game_id):
+    mongo.db.games.remove({"_id": ObjectId(game_id)})
+    flash("Your post has been removed.")
+    return redirect(url_for("my_posts"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
