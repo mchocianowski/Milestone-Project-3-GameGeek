@@ -111,6 +111,12 @@ def add_review():
                            players=players)
 
 
+@app.route("/my_posts", methods=["GET", "POST"])
+def my_posts():
+    games = list(mongo.db.games.find())
+    return render_template("my_posts.html", games=games)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
