@@ -1,16 +1,43 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2 class=games_title>Game Central</h2>
+<div class="row">
+        <div class="col s12 m8 offset-m2">
+            <div class="card-panel header-card">
+                <h4 class=website-headers>Game Central</h4>
+                <h6 class=website-subheaders>Check out the latest posts from our members!</h6>
+            </div>
+        </div>
+</div>
+
+<div class="row card-panel search-card col s12">
+        <form action="{{ url_for('search') }}" method="post" class="col s12">
+            <div class="row align-wrapper center-align">
+                <div class="input-field col s12">
+                    <i class="fas fa-search prefix green-text"></i>
+                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                    <label for="query">Search Reviews</label>
+                </div>
+            </div>
+                <div class="row">
+                <div class="col s12 m8 offset-m4">
+                    <a href="{{ url_for('get_games') }}" class="btn reset-button">Reset</a>
+                    <button type="submit" class="btn submit-button">
+                        <i class="fas fa-search left"></i> Search
+                    </button>
+                </div>
+                </div>
+        </form>
+    </div>
 
 <ul class="collapsible popout">
     {% for game in games %}
     <li>
-      <div class="collapsible-header">
-          <i class="far fa-arrow-alt-circle-down"></i>
+      <div class="collapsible-header content-popout-header">
+          <i class="far fa-arrow-alt-circle-down white-text"></i>
           {{ game.game_name }}
         </div>
-      <div class="collapsible-body">
+      <div class="collapsible-body content-popout-body">
           <strong>{{ game.age_restriction }}</strong>
           <strong>{{ game.genre_name }}</strong>
           <strong>{{ game.single_or_multiplayer }}</strong>
