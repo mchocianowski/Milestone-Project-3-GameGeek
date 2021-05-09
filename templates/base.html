@@ -16,20 +16,20 @@
 <body>
     <header>
         <!-- top navbar -->
-        <nav class="nav-extended text-shadow black">
+        <nav class="nav-extended navbar-styling">
             <div class="nav-wrapper">
-                <a href="{{ url_for('get_games') }}" class="brand-logo">Game Geek</a>
+                <a href="{{ url_for('get_games') }}" class="brand-logo"> <img src="static/images/GameGeek_logo.png"
+                        alt="website-logo" class="img-fluid logo" /></a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('get_games') }}">Home</a></li>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="{{ url_for('get_games') }}">Game Central</a></li>
                     {% if session.user %}
-                    <li><a href="{{ url_for('my_posts') }}">My Reviews</a></li>
                     <li><a href="{{ url_for('add_review') }}">Post New Review</a></li>
                     <li><a href="{{ url_for('profiles', username=session['user']) }}">Profile</a></li>
-                     {% if session.user|lower == "Admin101"|lower %}
-                            <li><a href="{{ url_for('all_user_reviews') }}">Manage User Posts</a></li>
-                        {% endif %}
+                    {% if session.user|lower == "Admin"|lower %}
+                    <li><a href="{{ url_for('all_user_reviews') }}">Manage User Posts</a></li>
+                    {% endif %}
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
                     <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -40,21 +40,20 @@
         </nav>
 
         <!-- mobile sidenav -->
-        <ul class="sidenav" id="mobile-demo">
+        <ul class="sidenav navbar-styling" id="mobile-demo">
             <li>
-                <h4 class="center-align text-shadow">Game Geek</h4>
+                <h4 class="center-align mobile-navbar-text">Game Geek</h4>
             </li>
             <li><a href="{{ url_for('get_games') }}">Home</a></li>
-                    <li><a href="{{ url_for('get_games') }}">Game Central</a></li>
-                    {% if session.user %}
-                    <li><a href="{{ url_for('my_posts') }}">My Reviews</a></li>
-                    <li><a href="{{ url_for('add_review') }}">Post New Review</a</li>
-                    <li><a href="{{ url_for('profiles', username=session['user']) }}">Profile</a></li>
-                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-                    {% else %}
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
-                    <li><a href="{{ url_for('login') }}">Login</a></li>
-                    {% endif %}
+            <li><a href="{{ url_for('get_games') }}">Game Central</a></li>
+            {% if session.user %}
+            <li><a href="{{ url_for('add_review') }}">Post New Review</a< /li>
+            <li><a href="{{ url_for('profiles', username=session['user']) }}">Profile</a></li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            {% else %}
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            {% endif %}
         </ul>
     </header>
 
@@ -62,8 +61,12 @@
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         {% for message in messages %}
-        <div class="row flashes">
-            <h4 class="light-green center-align">{{ message }}</h4>
+        <div class="row">
+            <div class="col s12 m8 offset-m2">
+                <div class="card-panel flash-card">
+                    <p> {{ message }} </p>
+                </div>
+            </div>
         </div>
         {% endfor %}
         {% endif %}
