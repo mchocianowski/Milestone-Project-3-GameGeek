@@ -26,6 +26,10 @@ def get_games():
     return render_template("games.html", games=games)
 
 
+@app.route("/home")
+def home():
+    return render_template("home.html")
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -49,6 +53,7 @@ def register():
         return redirect(url_for("profiles", username=session["user"]))
     return render_template("register.html")
 
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -62,7 +67,8 @@ def login():
                 flash("Welcome, {}".format(request.form.get("username")))
                 return redirect(url_for("profiles", username=session["user"]))
             else:
-                flash("It seems that the Username or Password entered are incorrect, please try again.")
+                flash(
+                    "It seems that the Username or Password entered are incorrect, please try again.")
                 return redirect(url_for("login"))
 
         else:
@@ -72,12 +78,14 @@ def login():
 
     return render_template("login.html")
 
+
 @app.route("/profiles/<username>", methods=["GET", "POST"])
 def profiles(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    games = list(mongo.db.games.find())
     if session["user"]:
-        return render_template("profiles.html", username=username)
+        return render_template("profiles.html", games=games, username=username)
 
     return redirect(url_for("login"))
 
@@ -105,16 +113,10 @@ def add_review():
         return redirect(url_for("get_games"))
 
     ages = mongo.db.ages.find().sort("age_restriction", 1)
-    genres = mongo.db.genres.find().sort("genre_name",1)
-    players = mongo.db.players.find().sort("single_or_multiplayer",1)
+    genres = mongo.db.genres.find().sort("genre_name", 1)
+    players = mongo.db.players.find().sort("single_or_multiplayer", 1)
     return render_template("add_review.html", genres=genres, ages=ages,
                            players=players)
-
-
-@app.route("/my_posts", methods=["GET", "POST"])
-def my_posts():
-    games = list(mongo.db.games.find())
-    return render_template("my_posts.html", games=games)
 
 
 @app.route("/edit_review/<game_id>", methods=["GET", "POST"])
@@ -128,9 +130,8 @@ def edit_review(game_id):
             "extra_comments": request.form.get("extra_comments"),
             "created_by": session["user"]
         }
-        mongo.db.games.update({"_id": ObjectId(game_id)},submit_review)
+        mongo.db.games.update({"_id": ObjectId(game_id)}, submit_review)
         flash("Review Successfully Updated")
-
 
     game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
     ages = mongo.db.ages.find().sort("age_restriction", 1)
@@ -144,18 +145,27 @@ def edit_review(game_id):
 def delete_review(game_id):
     mongo.db.games.remove({"_id": ObjectId(game_id)})
     flash("Your post has been removed.")
-    return redirect(url_for("my_posts"))
+    return redirect(url_for("profiles", username=session["user"]))
+
 
 @app.route("/all_user_reviews", methods=["GET", "POST"])
 def all_user_reviews():
     games = list(mongo.db.games.find())
     return render_template("all_user_reviews.html", games=games)
 
+
 @app.route("/delete_user_review/<game_id>")
 def delete_user_review(game_id):
     mongo.db.games.remove({"_id": ObjectId(game_id)})
     flash("This review has been removed.")
     return redirect(url_for("all_user_reviews"))
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    games = list(mongo.db.games.find({"$text": {"$search": query}}))
+    return render_template("games.html", games=games)
 
 
 if __name__ == "__main__":
