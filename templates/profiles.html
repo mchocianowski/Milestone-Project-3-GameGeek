@@ -1,14 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="row">
-        <div class="col s12 m8 offset-m2">
-            <div class="card-panel">
-                <h3 class="center-align green-text">
-                    {{ username }}'s Profile
-                </h3>
-            </div>
+<div class="row">
+    <div class="col s12 m8 offset-m2">
+        <div class="card-panel header-card">
+            <h4 class=website-headers>
+                {{ username }}'s Profile
+            </h4>
         </div>
     </div>
+</div>
+
+<ul class="collapsible popout">
+    {% for game in games %}
+    {% if session.user|lower == game.created_by|lower %}
+    <li>
+        <div class="row">
+            <div class="collapsible-header content-popout-header">
+                <div class="col s6">
+                    <i class="far fa-arrow-alt-circle-down"></i>
+                    {{ game.game_name }}
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <a href="{{ url_for('edit_review', game_id=game._id)}}" class="btn edit-button">Edit</a>
+                        <a href="{{ url_for('delete_review', game_id=game._id)}}" class="btn delete-button">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="collapsible-body content-popout-body">
+            <strong>{{ game.age_restriction }}</strong>
+            <strong>{{ game.genre_name }}</strong>
+            <strong>{{ game.single_or_multiplayer }}</strong>
+            <p>{{ game.extra_comments }}</p>
+            <p><em>by: {{ game.created_by }}</em></p>
+            <p></p>
+        </div>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
 
 {% endblock %}
