@@ -1,18 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,600;0,700;1,700&display=swap');
+
+/* Body styling */
 body {
-    background-color: grey;
+    background-color:#333333;
 }
-
-.database_text {
-    color: black;
+/* Header Card Styling*/
+.header-card{
+    background-color: #00b800;
+    border-radius: 20px;
 }
-
-.web_title {
-    color: green;
-    font-size: 40px;
-}
-
-.games_title {
+/* Main headers styling */
+.website-headers {
     color: black;
     text-align: center;
+    font-family:"Rubik";
+    font-weight: 600;
 }
 
+/* Sub-headings styling */
+.website-subheaders{
+    color: black;
+    text-align: center;
+    font-family:"Rubik";
+    font-weight: 400;
+}
+
+/* Popout header styling */
+.content-popout-header{
+    background-color: #383838;
+    color: whitesmoke;
+    font-family:"Rubik";
+    font-weight: 400;
+}
+
+/* Popout body styling */
+.content-popout-body{
+    background-color: #383838;
+    color: whitesmoke;
+    font-family:"Rubik";
+    font-weight: 200;
+}
+
+/* Content cards body styling */
+.content-card-body{
+    background-color: #383838;
+    border-radius: 20px;
+    color: whitesmoke;
+    font-family:"Rubik";
+    font-weight: 200;
+}
+
+/* Submit buttons styling */
+.submit-button{
+    background-color: #00b800;
+}
+
+/* Submit button when hovered over styling */
+.submit-button:hover{
+    background-color: #00a500;
+}
+
+.reset-button{
+    background-color: #FF0000;
+}
+
+.reset-button:hover{
+    background-color: #e50000;
+}
+
+.edit-button{
+    background-color: #00b800;
+    margin-bottom:10px;
+}
+
+.edit-button:hover{
+    background-color: #00a500;
+}
+
+.delete-button{
+    background-color: #FF0000;
+    margin-bottom: 10px;
+}
+.delete-button:hover{
+    background-color: #e50000;
+}
+/* Paragraph text styling for registration page text.*/
+.registration-requirment{
+    color: whitesmoke;
+    text-align: center;
+    font-family:"Rubik";
+    font-weight: 400;
+}
+/* Search card styling */
+.search-card{
+    background-color: #383838 ;
+    border-radius: 20px;
+}
+
+/* Text Styling */
+.text{
+    color: whitesmoke;
+    text-align: center;
+    font-family:"Rubik";
+    font-weight: 400;
+}
+
+.flash-card{
+    background-color: #00b800;
+    border-radius: 20px;
+    color: black;
+    text-align: center;
+    font-family:"Rubik";
+    font-weight: 600;
+}
+
+.logo{
+    max-height: 64px;
+}
+
+.navbar-styling{
+    background-color:#2d2d2d;
+}
+.mobile-navbar-text{
+    color: whitesmoke;
+    font-family:"Rubik";
+    font-weight: 400;
+}
+
+.sidenav li>a{
+    color: #00b800;
+    font-family:"Rubik";
+    font-weight: 400;
+}
+
+.sidenav li>a:hover{
+    color: #00a500;
+}
+
+nav ul a{
+    color: #00b800;
+    font-family:"Rubik";
+    font-weight: 400;
+}
