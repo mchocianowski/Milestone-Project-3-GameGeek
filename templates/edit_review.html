@@ -1,9 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="green-text center-align">Edit Review</h3>
+<div class="row">
+        <div class="col s12 m8 offset-m2">
+            <div class="card-panel header-card">
+                <h4 class=website-headers>Edit Review</h4>
+            </div>
+        </div>
+</div>
 
-<div class="row card=-panel white">
+<div class="row card=-panel content-card-body">
     <form class="col s12" method="POST" action="{{url_for('edit_review',game_id=game._id)}}">
         <div class="row">
             <div class="input-field col s12">
@@ -74,10 +80,10 @@
         </div>
         <div class="row">
             <div class="col s12 center-align">
-                <a href="{{ url_for('get_games') }}" class="btn waves-effect waves-light">
+                <a href="{{ url_for('get_games') }}" class="btn reset-button">
                         Cancel <i class="fas fa-times-circle right"></i>
                     </a>
-                <button class="btn waves-effect waves-light" type="submit">
+                <button class="btn submit-button" type="submit">
                     Edit Task <i class="fas fa-edit"></i>
                 </button>
             </div>
