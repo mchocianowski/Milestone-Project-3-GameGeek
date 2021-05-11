@@ -10,6 +10,7 @@ body {
     border-radius: 20px;
     margin-top: 15px;
 }
+/* Home Page Header Card Styling*/
 .welcome-card{
     background-color: #383838;
     border-radius: 20px;
@@ -65,28 +66,29 @@ body {
 .submit-button:hover{
     background-color: #00a500;
 }
-
+/* Delete User review button*/
 .reset-button{
     background-color: #FF0000;
 }
-
+/* Delete User review button when hovered*/
 .reset-button:hover{
     background-color: #e50000;
 }
-
+/* Edit review button*/
 .edit-button{
     background-color: #00b800;
     margin-bottom:10px;
 }
-
+/* Edit review button when hovered*/
 .edit-button:hover{
     background-color: #00a500;
 }
-
+/* Delete review button*/
 .delete-button{
     background-color: #FF0000;
     margin-bottom: 10px;
 }
+/* Delete review button when hovered*/
 .delete-button:hover{
     background-color: #e50000;
 }
@@ -110,7 +112,7 @@ body {
     font-family:"Rubik";
     font-weight: 400;
 }
-
+/* Opening paragraph text.*/
 .welcome-text{
     color: whitesmoke;
     text-align: center;
@@ -118,6 +120,7 @@ body {
     font-weight: 400;
     font-size: 30px;
 }
+/* Styling the flash cards*/
 .flash-card{
     background-color: #00b800;
     border-radius: 20px;
@@ -126,36 +129,37 @@ body {
     font-family:"Rubik";
     font-weight: 600;
 }
-
+/* styling the logo inside the nav-bar*/
 .logo{
     max-height: 64px;
 }
-
+/* Styling the nav bar*/
 .navbar-styling{
     background-color:#2d2d2d;
 }
+/* Styling the mobile nav bar*/
 .mobile-navbar-text{
     color: whitesmoke;
     font-family:"Rubik";
     font-weight: 400;
 }
-
+/* Styling the mobile nav bar links*/
 .sidenav li>a{
     color: #00b800;
     font-family:"Rubik";
     font-weight: 400;
 }
-
+/* Styling the mobile nav bar links when hovered*/
 .sidenav li>a:hover{
     color: #00a500;
 }
-
+/* Styling the nav bar links*/
 nav ul a{
     color: #00b800;
     font-family:"Rubik";
     font-weight: 400;
 }
-
+/* Styling the logo on the home page*/
 .welcome-image-logo{
     max-height: 100px;
 }
