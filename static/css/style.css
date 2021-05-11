@@ -8,6 +8,12 @@ body {
 .header-card{
     background-color: #00b800;
     border-radius: 20px;
+    margin-top: 15px;
+}
+.welcome-card{
+    background-color: #383838;
+    border-radius: 20px;
+    margin-top: 15px;
 }
 /* Main headers styling */
 .website-headers {
@@ -105,6 +111,13 @@ body {
     font-weight: 400;
 }
 
+.welcome-text{
+    color: whitesmoke;
+    text-align: center;
+    font-family:"Rubik";
+    font-weight: 400;
+    font-size: 30px;
+}
 .flash-card{
     background-color: #00b800;
     border-radius: 20px;
@@ -141,4 +154,8 @@ nav ul a{
     color: #00b800;
     font-family:"Rubik";
     font-weight: 400;
+}
+
+.welcome-image-logo{
+    max-height: 100px;
 }
