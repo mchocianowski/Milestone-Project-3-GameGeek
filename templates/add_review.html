@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-
+<!-- Card panel from materialize.-->
 <div class="row">
-        <div class="col s12 m8 offset-m2">
-            <div class="card-panel header-card">
-                <h4 class="website-headers">Post New Review</h4>
-                <h6 class="website-subheaders">Share your thoughts with the world!</h6>
-            </div>
+    <div class="col s12 m8 offset-m2">
+        <div class="card-panel header-card">
+            <h4 class="website-headers">Post New Review</h4>
+            <h6 class="website-subheaders">Share your thoughts with the world!</h6>
         </div>
+    </div>
 </div>
-
+<!-- Card panel from materialize.-->
 <div class="row card-panel content-card-body">
     <form class="col s12" method="POST" action="{{url_for('add_review')}}">
         <div class="row">
@@ -54,7 +54,7 @@
                 </select>
                 <label for="single_or_multiplayer">Single or Multiplayer</label>
             </div>
-            
+
         </div>
 
         <div class="row">
@@ -65,6 +65,7 @@
                 <label for="extra_comments">Game Description/review.</label>
             </div>
         </div>
+        <!-- Add a button from materialize.-->
         <div class="row">
             <div class="col s12 center-align">
                 <button class="btn waves-effect waves-light submit-button" type="submit">

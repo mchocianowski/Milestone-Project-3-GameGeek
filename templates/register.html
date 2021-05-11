@@ -1,19 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
-
+<!-- Card panel from materialize.-->
 <div class="row">
-        <div class="col s12 m8 offset-m2">
-            <div class="card-panel header-card">
-                <h4 class=website-headers>Register With Us!</h4>
-            </div>
+    <div class="col s12 m8 offset-m2">
+        <div class="card-panel header-card">
+            <h4 class=website-headers>Register With Us!</h4>
         </div>
+    </div>
 </div>
-
+<!-- Card panel from materialize.-->
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
         <div class="card-panel content-card-body">
             <div class="row">
-                <p class="registration-requirment">The Username must contain atleast one capital letter and be atleast 5 characters long!</p>
+                <p class="registration-requirment">The Username must contain atleast one capital letter and be atleast 5
+                    characters long!</p>
                 <div class="input-field col s12">
                     <i class="fas fa-user-plus prefix light-green-text"></i>
                     <input id="username" name="username" type="text" pattern="(?=.*[a-z])(?=.*[A-Z]).{5,}"
@@ -22,7 +23,8 @@
                 </div>
             </div>
             <div class="row">
-                <p class="registration-requirment">The Password must contain atleast one capital letter, one number and be atleast 8 characters long!</p>
+                <p class="registration-requirment">The Password must contain atleast one capital letter, one number and
+                    be atleast 8 characters long!</p>
                 <div class="input-field col s12">
                     <i class="fas fa-user-lock prefix light-green-text"></i>
                     <input id="password" name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"

@@ -1,3 +1,4 @@
+// Implementing nav bar and collapibles from materialize.Taken from materialize language markup.
 $(document).ready(function () {
     $('.sidenav').sidenav({
         edge: "right"
@@ -5,7 +6,7 @@ $(document).ready(function () {
     $('.collapsible').collapsible();
     $('select').formSelect();
 });
-
+// Validating the materialize forms. Taken from materialize language markup.
 validateMaterializeSelect();
     function validateMaterializeSelect() {
         let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
