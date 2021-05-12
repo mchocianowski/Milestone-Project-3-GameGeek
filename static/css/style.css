@@ -2,164 +2,210 @@
 
 /* Body styling */
 body {
-    background-color:#333333;
+    background-color: #333333;
 }
+
 /* Header Card Styling*/
-.header-card{
+.header-card {
     background-color: #00b800;
     border-radius: 20px;
     margin-top: 15px;
 }
+
 /* Home Page Header Card Styling*/
-.welcome-card{
+.welcome-card {
     background-color: #383838;
     border-radius: 20px;
     margin-top: 15px;
 }
+
 /* Main headers styling */
 .website-headers {
     color: black;
     text-align: center;
-    font-family:"Rubik";
+    font-family: "Rubik";
     font-weight: 600;
 }
 
 /* Sub-headings styling */
-.website-subheaders{
+.website-subheaders {
     color: black;
     text-align: center;
-    font-family:"Rubik";
+    font-family: "Rubik";
     font-weight: 400;
 }
 
 /* Popout header styling */
-.content-popout-header{
+.content-popout-header {
     background-color: #383838;
     color: whitesmoke;
-    font-family:"Rubik";
+    font-family: "Rubik";
     font-weight: 400;
 }
 
 /* Popout body styling */
-.content-popout-body{
+.content-popout-body {
     background-color: #383838;
     color: whitesmoke;
-    font-family:"Rubik";
+    font-family: "Rubik";
     font-weight: 200;
 }
 
 /* Content cards body styling */
-.content-card-body{
+.content-card-body {
     background-color: #383838;
     border-radius: 20px;
     color: whitesmoke;
-    font-family:"Rubik";
+    font-family: "Rubik";
     font-weight: 200;
 }
 
 /* Submit buttons styling */
-.submit-button{
+.submit-button {
     background-color: #00b800;
 }
 
 /* Submit button when hovered over styling */
-.submit-button:hover{
+.submit-button:hover {
     background-color: #00a500;
 }
+
 /* Delete User review button*/
-.reset-button{
+.reset-button {
     background-color: #FF0000;
 }
+
 /* Delete User review button when hovered*/
-.reset-button:hover{
+.reset-button:hover {
     background-color: #e50000;
 }
+
 /* Edit review button*/
-.edit-button{
+.edit-button {
     background-color: #00b800;
-    margin-bottom:10px;
+    margin-bottom: 10px;
 }
+
 /* Edit review button when hovered*/
-.edit-button:hover{
+.edit-button:hover {
     background-color: #00a500;
 }
+
 /* Delete review button*/
-.delete-button{
+.delete-button {
     background-color: #FF0000;
     margin-bottom: 10px;
 }
+
 /* Delete review button when hovered*/
-.delete-button:hover{
+.delete-button:hover {
     background-color: #e50000;
 }
+
 /* Paragraph text styling for registration page text.*/
-.registration-requirment{
+.registration-requirment {
     color: whitesmoke;
     text-align: center;
-    font-family:"Rubik";
+    font-family: "Rubik";
     font-weight: 400;
 }
+
 /* Search card styling */
-.search-card{
-    background-color: #383838 ;
+.search-card {
+    background-color: #383838;
     border-radius: 20px;
 }
 
 /* Text Styling */
-.text{
+.text {
     color: whitesmoke;
     text-align: center;
-    font-family:"Rubik";
+    font-family: "Rubik";
     font-weight: 400;
 }
+
 /* Opening paragraph text.*/
-.welcome-text{
+.welcome-text {
     color: whitesmoke;
     text-align: center;
-    font-family:"Rubik";
+    font-family: "Rubik";
     font-weight: 400;
     font-size: 30px;
 }
+
 /* Styling the flash cards*/
-.flash-card{
+.flash-card {
     background-color: #00b800;
     border-radius: 20px;
     color: black;
     text-align: center;
-    font-family:"Rubik";
+    font-family: "Rubik";
     font-weight: 600;
 }
+
 /* styling the logo inside the nav-bar*/
-.logo{
+.logo {
     max-height: 64px;
 }
+
 /* Styling the nav bar*/
-.navbar-styling{
-    background-color:#2d2d2d;
+.navbar-styling {
+    background-color: #2d2d2d;
 }
+
 /* Styling the mobile nav bar*/
-.mobile-navbar-text{
+.mobile-navbar-text {
     color: whitesmoke;
-    font-family:"Rubik";
+    font-family: "Rubik";
     font-weight: 400;
 }
+
 /* Styling the mobile nav bar links*/
-.sidenav li>a{
+.sidenav li>a {
     color: #00b800;
-    font-family:"Rubik";
+    font-family: "Rubik";
     font-weight: 400;
 }
+
 /* Styling the mobile nav bar links when hovered*/
-.sidenav li>a:hover{
+.sidenav li>a:hover {
     color: #00a500;
 }
+
 /* Styling the nav bar links*/
-nav ul a{
+nav ul a {
     color: #00b800;
-    font-family:"Rubik";
+    font-family: "Rubik";
     font-weight: 400;
 }
+
 /* Styling the logo on the home page*/
-.welcome-image-logo{
+.welcome-image-logo {
     max-height: 100px;
+}
+/*Style he footer*/
+footer {
+    background-color: #383838;
+    font-family: "Rubik";
+    color: whitesmoke;
+    height: 100%;
+    text-align: center;
+}
+/*Style the social links inside the footer*/
+.social-links li a i {
+    width: 32px;
+    height: 32px;
+    padding: 12px 0;
+    border-radius: 50%;
+    font-size: 13px;
+    line-height: 7px;
+    text-align: center;
+    color: whitesmoke;
+    background: #333333;
+    transition: all 0.35s ease-in-out;
+    display: inline-block;
+}
+/*Style the social links inside the footer when hovered over*/
+.social-links li a i:hover {
+    background: #00a500;
 }
