@@ -39,7 +39,8 @@ def register():
 
         if existing_user:
             flash(
-                "Sorry this Username already exists please try using a different Username.")
+                "Sorry this Username already exists please " +
+                "try using a different Username.")
             return redirect(url_for("register"))
 
         register = {
@@ -69,12 +70,14 @@ def login():
                 return redirect(url_for("profiles", username=session["user"]))
             else:
                 flash(
-                    "It seems that the Username or Password entered are incorrect, please try again.")
+                    "It seems that the Username or Password " +
+                    "entered are incorrect, please try again.")
                 return redirect(url_for("login"))
 
         else:
             flash(
-                "It seems that the Username or Password entered are incorrect, please try again.")
+                "It seems that the Username or Password entered " +
+                "are incorrect, please try again.")
             return redirect(url_for("login"))
 
     return render_template("login.html")
