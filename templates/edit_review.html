@@ -48,14 +48,14 @@
                     {% endif %}
                     {% endfor %}
                 </select>
-                <label for="Genre_Name">Genre</label>
+                <label for="genre_Name">Genre</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-users prefix green-text"></i>
                 <select id="single_or_multiplayer" name="single_or_multiplayer" class="validate" required>
-                    <option value="" disabled selected>Single or Multiplayer</option>
+                    <option value="" disabled>Single or Multiplayer</option>
                     {% for player in players %}
                     {% if player.single_or_multiplayer  == game.single_or_multiplayer %}
                     <option value="{{ player.single_or_multiplayer }}" selected>{{ player.single_or_multiplayer }}
