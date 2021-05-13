@@ -11,6 +11,8 @@ or by whether the game is playable in single or multiplayer modes. Thes reults w
 The website will feature an admin page where the admin can view and delte user posts if they deem the post to be innapropiate.
 Where the project stands by the end will demonstrate my ability to implement frameworks, database structures and the use of python
 to create a functioning full-stack website which can later be ellaborated to create a great community forum.
+![Multi Device Mockup Image](documents/device_mockup.png)
+
 
 # **_Purpose:_**
 
@@ -70,6 +72,77 @@ on white or black would have. Making it easier to focus on the page.
 ![Initial Desktop Wireframe 5](documents/wireframe_new_post_page.png)
 ![Initial Desktop Wireframe 6](documents/wireframe_game_central_user_view.png)
 ![Initial Mobile Wireframe](documents/wireframes_mobile_design.png)
+
+### *Database Design:* ###
+
+MongoDB Format:
+
+Cluster: GameGeek
+
+Database: game_central
+
+Collection: ages
+
+{
+
+_id: Unique Value,
+
+age_restriction: Pegi 3
+
+}
+
+Collection: games
+
+{
+
+_id: Unique Value,
+
+game_name: Call of duty Warzone,
+
+age_restriction: Pegi 18,
+
+genre_name: Shooter,
+
+single_or_multiplayer: Multiplayer,
+
+extra_comments: Tested in chrome, in large device settings.
+
+created_by: session_user.
+
+}
+
+Collection: genres
+
+{
+
+_id: Unique Value,
+
+genre_name: Action/Adventure.
+
+}
+
+Collection: players
+
+{
+
+_id: Unique Value,
+
+single_or_multiplayer: Single Player.
+
+}
+
+Collection: users
+
+{
+
+_id: Unique Value,
+
+username: admin,
+
+password: Admin101 (stored as unique code in MongoDB)
+
+}
+
 
 # *Differences to design:*
 
@@ -209,6 +282,17 @@ The web app was also tested in google chrome, using chrome developer tools I tes
 and large devices. Each page was assessed on all devices making sure that it displays correctly and no issues arise fro musing the 
 app on a different device.
 
+To conclude the testing section of this document; the web app has passed all validation including html, css, js and pep8. Attatched below
+is supporting evidence for css,js and pep8. I have not included html validation screenshots as I am confident in my findings during testing and there would 
+numerous screenshots of the same result since each page needed to be run through the validator independantly. It is also worth mentioning 
+that as a result of some python with html files, the code had to be validated via url as oppose to direct input. However with this,
+the profile pae had to be tested via copied code from Developer Tools since it is user locked copying the url directly resulted in a error 500. 
+This error disappeared when trying the method mentioned which was recommended by tutor support.
+
+![CSS Validation](documents/css_validator.png)
+![JS Validation](documents/js_validator.png)
+![PEP8 Validation](documents/pep8_validator.png)
+
 # *Deployment:*
 
 ## *Project Creation:*
@@ -249,3 +333,34 @@ or a local machine:
     * Open your developement editor of choice and open a terminal window in a directory of your choice.
     * Use the 'git clone' command in terminal followed by the copied git URL.
     * Finally a project clone will be created locally on your machine.
+
+# *Citations:* # 
+
+* [Assesment criteria](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DCP101+2017_T3/courseware/5a170081aab6478d881d96db05038a28/698b06ef0bd34c9fa300958e72747941/)
+
+* [Mini Project Backend Development](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DCP101+2017_T3/courseware/9e2f12f5584e48acb3c29e9b0d7cc4fe/054c3813e82e4195b5a4d8cd8a99ebaa/)
+
+* [Materialize](https://materializecss.com/collections.html)
+
+* [Implementation of error 404 and 500 pages](https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/)
+
+* [Google Fonts](https://fonts.google.com/specimen/Rubik?query=rubik)
+
+* [Colour Hex](https://www.colorhexa.com/007600)
+
+* [Multi Device Website Mockup Generator](http://techsini.com/multi-mockup/index.php)
+
+* [5 User planes](https://ozchen.com/5-planes-content-strategy/)
+
+* [User story writing](https://www.mountaingoatsoftware.com/agile/user-stories)
+
+* [Website Wireframes](https://balsamiq.com/)
+
+# *Comments:*
+As final comments I'd like to point some of the known issues with the site. Due to Materialize not allowing customisation within
+certain componenent. After discussions with my mentor and tutoring support I have been unable to disable the smale squares in the add
+and edit review forms which act as the default dropdowns when using Materialize. It has been brought to my attention that there 
+is no specific errors which could have caused this and I was instructed o mention this in this document. Additionally I have been aware 
+of my less frequent commits during the begining of the course, as a result of a conversation between myself and mentor Aaron it is worth 
+explaining that my way to show constan commits was to get rid of huge chunks of codes especially in the app.py file and re-add the code
+commiting my work one app route at a time.
