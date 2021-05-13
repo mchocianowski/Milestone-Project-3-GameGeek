@@ -363,4 +363,5 @@ and edit review forms which act as the default dropdowns when using Materialize.
 is no specific errors which could have caused this and I was instructed o mention this in this document. Additionally I have been aware 
 of my less frequent commits during the begining of the course, as a result of a conversation between myself and mentor Aaron it is worth 
 explaining that my way to show constan commits was to get rid of huge chunks of codes especially in the app.py file and re-add the code
-commiting my work one app route at a time.
+commiting my work one app route at a time. Additionally, despite best efforts to change the form and search input text colour Materialize
+has done its best to stop me from doing so and so this a known fault.
