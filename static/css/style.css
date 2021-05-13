@@ -23,7 +23,7 @@ body {
 .website-headers {
     color: black;
     text-align: center;
-    font-family: "Rubik";
+    font-family: "Rubik", sans-serif;
     font-weight: 600;
 }
 
@@ -31,7 +31,7 @@ body {
 .website-subheaders {
     color: black;
     text-align: center;
-    font-family: "Rubik";
+    font-family: "Rubik", sans-serif;
     font-weight: 400;
 }
 
@@ -39,7 +39,7 @@ body {
 .content-popout-header {
     background-color: #383838;
     color: whitesmoke;
-    font-family: "Rubik";
+    font-family: "Rubik", sans-serif;
     font-weight: 400;
 }
 
@@ -47,7 +47,7 @@ body {
 .content-popout-body {
     background-color: #383838;
     color: whitesmoke;
-    font-family: "Rubik";
+    font-family: "Rubik", sans-serif;
     font-weight: 200;
 }
 
@@ -56,7 +56,7 @@ body {
     background-color: #383838;
     border-radius: 20px;
     color: whitesmoke;
-    font-family: "Rubik";
+    font-family: "Rubik", sans-serif;
     font-weight: 200;
 }
 
@@ -106,7 +106,7 @@ body {
 .registration-requirment {
     color: whitesmoke;
     text-align: center;
-    font-family: "Rubik";
+    font-family: "Rubik", sans-serif;
     font-weight: 400;
 }
 
@@ -120,7 +120,7 @@ body {
 .text {
     color: whitesmoke;
     text-align: center;
-    font-family: "Rubik";
+    font-family: "Rubik", sans-serif;
     font-weight: 400;
 }
 
@@ -128,7 +128,7 @@ body {
 .welcome-text {
     color: whitesmoke;
     text-align: center;
-    font-family: "Rubik";
+    font-family: "Rubik", sans-serif;
     font-weight: 400;
     font-size: 30px;
 }
@@ -139,7 +139,7 @@ body {
     border-radius: 20px;
     color: black;
     text-align: center;
-    font-family: "Rubik";
+    font-family: "Rubik", sans-serif;
     font-weight: 600;
 }
 
@@ -156,14 +156,14 @@ body {
 /* Styling the mobile nav bar*/
 .mobile-navbar-text {
     color: whitesmoke;
-    font-family: "Rubik";
+    font-family: "Rubik", sans-serif;
     font-weight: 400;
 }
 
 /* Styling the mobile nav bar links*/
 .sidenav li>a {
     color: #00b800;
-    font-family: "Rubik";
+    font-family: "Rubik", sans-serif;
     font-weight: 400;
 }
 
@@ -175,7 +175,7 @@ body {
 /* Styling the nav bar links*/
 nav ul a {
     color: #00b800;
-    font-family: "Rubik";
+    font-family: "Rubik", sans-serif;
     font-weight: 400;
 }
 
@@ -186,7 +186,7 @@ nav ul a {
 /*Style he footer*/
 footer {
     background-color: #383838;
-    font-family: "Rubik";
+    font-family: "Rubik", sans-serif;
     color: whitesmoke;
     height: 100%;
     text-align: center;
