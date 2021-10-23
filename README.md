@@ -11,7 +11,6 @@ or by whether the game is playable in single or multiplayer modes. Thes reults w
 The website will feature an admin page where the admin can view and delte user posts if they deem the post to be innapropiate.
 Where the project stands by the end will demonstrate my ability to implement frameworks, database structures and the use of python
 to create a functioning full-stack website which can later be ellaborated to create a great community forum.
-Click here to find my project: https://mchocianowski.github.io/Milestone-Project-HTML-CSS/index.html
 ![Multi Device Mockup Image](documents/device_mockup.png)
 
 
